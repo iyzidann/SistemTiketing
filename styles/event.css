@@ -1,0 +1,29 @@
+.event-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.event-price {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+}
+
+.event-description-hidden, .event-id-hidden {
+    display: none;
+}
+
+.detail-event-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.detail-event-price {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: gray;
+}
