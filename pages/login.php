@@ -1,7 +1,5 @@
 <?php 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'Login') {
-        login();
-    }
+    // Login function is now handled in index.php
 ?>
 
 <section class="login-container">
@@ -23,6 +21,9 @@
                     <input type="submit" class="btn btn-primary" name="action" value="Login">
                 </div>
             </form>
+            <div class="form-group" style="margin-top: 20px; text-align: center;">
+                <a href="index.php" class="btn btn-outline">← Back to Events</a>
+            </div>
         </div>
     </div>
 </section>

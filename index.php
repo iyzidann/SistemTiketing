@@ -38,8 +38,15 @@
                     } else if (isset($_POST['action']) && $_POST['action'] === 'Daftar Event') {
                         include('./pages/event.php');
                     } else if (isset($_POST['action']) && $_POST['action'] === 'Login') {
-                        include('./pages/login.php');
+                        // Call the login function instead of including the page
+                        login();
+                        // If login fails, show the login page
+                        if (!isset($_SESSION['admin_loggedin'])) {
+                            include('./pages/login.php');
+                        }
                     } else if (isset($_POST['action']) && $_POST['action'] === 'Logout') {
+                        logout();
+                    } else if (isset($_POST['action']) && $_POST['action'] === 'Hapus Event') {
                         include('./pages/admin.php');
                     }
                 } else {

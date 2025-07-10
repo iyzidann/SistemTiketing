@@ -5,8 +5,8 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'Buat Event') {
         createEvent();
-    } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'Logout') {
-        logout();
+    } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'Hapus Event') {
+        deleteEvent();
     }
 ?>
 
@@ -41,6 +41,12 @@
                                 <p class="event-price">Price: Rp<?php echo $event['event_price'] ?></p>
                                 <p class="event-description-hidden"><?php echo $event['event_description'] ?></p>
                                 <p class="event-id-hidden"><?php echo $event['event_id'] ?></p>
+                                <div class="flex gap-sm" style="margin-top: 10px;">
+                                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" style="display: inline;">
+                                        <input type="hidden" name="event_id" value="<?php echo $event['event_id'] ?>">
+                                        <input type="submit" name="action" value="Hapus Event" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus event ini?')">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
